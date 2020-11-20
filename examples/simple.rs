@@ -1,7 +1,7 @@
 extern crate tee;
 
-use tee::TeeReader;
 use std::io::Read;
+use tee::TeeReader;
 
 fn main() {
     let mut reader = "It's over 9000!".as_bytes();
