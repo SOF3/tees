@@ -22,7 +22,7 @@ tees = "0.1.1"
 
 ## examples
 ```rust
-let tee_reader = tee::TeeReader::new(reader, writer);
+let tee_reader = tees::TeeReader::new(reader, writer);
 ```
 
 Doug Tangren (softprops) 2015
