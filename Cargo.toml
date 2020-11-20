@@ -1,10 +1,8 @@
 [package]
 name = "tee"
-version = "0.1.0"
-authors = ["softprops <d.tangren@gmail.com>"]
+version = "0.1.1"
+authors = ["softprops <d.tangren@gmail.com>", "SOFe <sofe2038@gmail.com>"]
 description = "An adapter for readers which delegate reads to a writer"
-documentation = "http://softprops.github.io/tee"
-homepage = "https://github.com/softprops/tee"
-repository = "https://github.com/softprops/tee"
+repository = "https://github.com/SOF3/tees"
 keywords = ["io"]
 license = "MIT"
