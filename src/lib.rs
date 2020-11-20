@@ -1,4 +1,4 @@
-use std::io::{Read, Result, Write};
+use std::io::{Read, Result, Write, Seek, SeekFrom};
 
 /// An adapter for readers whose inputs
 /// are written to a "tee"'d writer
@@ -33,6 +33,15 @@ impl<R: Read, W: Write> Read for TeeReader<R, W> {
         Ok(n)
     }
 }
+
+impl<R: Read + Seek, W: Write + Seek> Seek for TeeReader<R, W> {
+    fn seek(&mut self, pos: SeekFrom) -> Result<u64> {
+        let ret = self.reader.seek(pos)?;
+        self.writer.seek(SeekFrom::Start(ret))?;
+        Ok(ret)
+    }
+}
+
 
 #[cfg(test)]
 mod tests {
